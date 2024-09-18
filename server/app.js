@@ -1,8 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { fileURLToPath } from 'node:url';
-import { join, dirname } from 'node:path';
 import { Server } from 'socket.io'
 import { createServer } from 'node:http'
 
@@ -11,9 +9,6 @@ dotenv.config()
 const port = process.env.PORT
 const reactPort = process.env.REACT_PORT
 const url = process.env.URL
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename)
 
 const app = express()
 app.use(cors())
