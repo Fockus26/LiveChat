@@ -9,25 +9,14 @@ import { createServer } from 'node:http'
 dotenv.config()
 
 const port = process.env.PORT
-const reactPort = process.env.REACT_PORT
-const url = process.env.URL
+const reactUrl = process.env.REACT_URL
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename)
 
 const app = express()
-app.use(express.static(join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'build')));
 app.use(cors())
-
-app.use(express.static('build', {
-    setHeaders: (res, path, stat) => {
-      if (path.endsWith('.css')) {
-        res.set('Content-Type', 'text/css');
-      } else if (path.endsWith('.js')) {
-        res.set('Content-Type', 'application/javascript');
-      }
-    }
-}));
 
 app.get('*', (req, res) => {
     res.sendFile(join(__dirname, 'build', 'index.html'));
@@ -37,7 +26,7 @@ const server = createServer(app)
 const io = new Server(server, {
     connectionStateRecovery: {},
     cors: {
-        origin: url + reactPort,
+        origin: reactUrl,
         methods: ['GET', 'POST']
     }
 })

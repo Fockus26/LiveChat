@@ -4,6 +4,7 @@ import Chat from './Chat'
 import Login from './Login'
 
 const socket = io.connect(process.env.REACT_APP_URL)
+console.log(process.env.REACT_APP_URL)
 
 function App() {
   const [username, setUsername] = useState('')
