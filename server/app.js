@@ -13,6 +13,16 @@ const url = process.env.URL
 const app = express()
 app.use(cors())
 
+app.use(express.static('build', {
+    setHeaders: (res, path, stat) => {
+      if (path.endsWith('.css')) {
+        res.set('Content-Type', 'text/css');
+      } else if (path.endsWith('.js')) {
+        res.set('Content-Type', 'application/javascript');
+      }
+    }
+}));
+
 const server = createServer(app)
 const io = new Server(server, {
     connectionStateRecovery: {},
