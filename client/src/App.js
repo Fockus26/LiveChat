@@ -3,13 +3,7 @@ import io from 'socket.io-client'
 import Chat from './Chat'
 import Login from './Login'
 
-<<<<<<< HEAD
-// const socket = io.connect(process.env.REACT_APP_URL)
-const socket = io.connect('https://livechat-backend-8iik.onrender.com')
-console.log('https://livechat-backend-8iik.onrender.com')
-=======
-const socket = io.connect('https://livechat-backend-8iik.onrender.com')
->>>>>>> 358219e833318be0a663b71379f7c90295e1f9f2
+const socket = io.connect(process.env.REACT_APP_URL)
 
 function App() {
   const [username, setUsername] = useState('')
