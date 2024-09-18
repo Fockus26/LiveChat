@@ -26,11 +26,7 @@ const server = createServer(app)
 const io = new Server(server, {
     connectionStateRecovery: {},
     cors: {
-<<<<<<< HEAD
         origin: reactUrl,
-=======
-        origin: 'https://livechat-frontend-8uwm.onrender.com',
->>>>>>> 4d321feafa467162d4c80c115a52815a3804c464
         methods: ['GET', 'POST']
     }
 })
