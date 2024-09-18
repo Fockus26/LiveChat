@@ -1,0 +1,197 @@
+.container-chat {
+  display: grid;
+  margin: auto;
+  height: 100vh;
+  max-width: 500px;
+  width: 95%;
+  box-sizing: border-box;
+}
+
+.container-chat > div {
+  margin: 10px 0;
+  border: 1.5px solid;
+  border-image: linear-gradient(to right, #00c9e6, #0075be) 1;
+}
+
+header {
+  background-color: hsl(190, 100%, 95%);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  height: 12.5%;
+  justify-content: space-between;
+}
+
+header div {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 50px;
+}
+
+header div img {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 50px;
+  height: auto;
+}
+
+header div h2 {
+  margin: 0px 0px 3px 6px;
+  font-weight: 600;
+}
+
+header button {
+  background-image: linear-gradient(to right, #ff99a4, #de1f48);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box; 
+  background-size: 200%;
+  padding: 10px;
+  width: 44px;
+  color: white;
+  border-radius: 50%;
+  transition: ease-in .35s;
+}
+
+header button:hover {
+  cursor: pointer;
+  background-position: 60%;
+}
+
+ul {
+  background-color: hsl(190, 100%, 97%);
+  height: 75%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(75vh);
+}
+
+ul li {
+  width: fit-content;
+  max-width: 65%;
+  color: white;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  word-break: break-all;
+  border-radius: 10px;
+}
+
+ul li .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul li .top button {
+  cursor: pointer;
+  color: white;
+}
+
+ul li .top button:nth-child(1) {
+  margin-right: 5px;
+}
+
+.username {
+  font-size: 11px;
+  color: #b1e0ff;
+  font-style: italic;
+}
+
+.time {
+  font-size: 11px;
+  margin-left: 5px;
+  color: #b1e0ff;
+}
+
+.isEdited {
+  margin-left: 20px;
+  font-size: 11px;
+  color: #b1e0ff;
+  font-style: italic;
+}
+
+footer {
+  background-color: hsl(190, 100%, 95%);
+  height: 12.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95%;
+}
+
+footer textarea {
+  border: 1.5px solid #00c9e6;
+  border-radius: 15px;
+  padding: 15px;
+  width: calc(80% - 5px);
+  transition: ease-in-out 1s;
+  resize: none;
+  overflow: hidden;
+  min-height: 50px;
+  max-height: 70px;
+}
+
+footer button { 
+  background: linear-gradient(to right, #00c9e6, #0075be);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box; 
+  width: calc(15% - 5px);
+  color: white;
+  transition: ease-in .35s;
+  box-sizing: border-box;
+  max-width: 400px;
+  background-size: 200%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+footer button:hover {
+  background-position: 60%;
+  cursor: pointer;
+}
+
+.edit-container textarea {
+  border: 1.5px solid #00c9e6;
+  border-radius: 15px;
+  padding: 15px;
+  width: 70%;
+  transition: ease-in-out 1s;
+  resize: none;
+  overflow: hidden;
+  min-height: 50px;
+  max-height: 70px;
+}
+
+.edit-container .button-group {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+}
+
+.edit-container .button-group button {
+  background: linear-gradient(to right, #00c9e6, #0075be);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box; 
+  color: white;
+  transition: ease-in .35s;
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+}
+
+.edit-container .button-group button:hover {
+  background-position: 60%;
+  cursor: pointer;
+}

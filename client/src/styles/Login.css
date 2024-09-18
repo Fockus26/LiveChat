@@ -1,0 +1,87 @@
+.container-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh; 
+  margin: auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-header img {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.login-header h1 {
+  margin-bottom: 5%;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+form {
+  display: grid;
+  place-items: center;
+  width: 70%;
+}
+
+form input {
+  border: 1.5px solid;
+  border-image: linear-gradient(to right, #00c9e6, #0075be) 1;
+  padding: 12px;
+  outline: none;
+  margin-bottom: 30px;
+  width: 100%;
+  transition: ease-in-out 1s;
+}
+
+form input:hover {
+  border-image: linear-gradient(to right, #0075be, #00c9e6) 1;
+}
+
+form div {
+  width: 100%;
+}
+
+.joinRoom {
+  background-image: linear-gradient(to right, #00c9e6, #0075be);
+}
+
+.joinRoom:hover {
+  transform: translateX(-10px);
+  box-shadow: 4px 2px 2px 2px rgb(0 0 0 / 30%);
+}
+
+
+.createRoom {
+  background-image: linear-gradient(to right, #0075be, #00c9e6);
+}
+
+.createRoom:hover {
+  transform: translateX(10px);
+  box-shadow: -4px 2px 2px 2px rgb(0 0 0 / 30%);
+}
+
+form button {
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box; 
+  background-size: 200%;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+  color: white;
+  transition: ease-in .3s;
+}
+
+form button:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+  background-position: 60%;
+}
