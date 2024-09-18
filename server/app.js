@@ -1,6 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { fileURLToPath } from 'node:url';
+import { join, dirname } from 'node:path';
 import { Server } from 'socket.io'
 import { createServer } from 'node:http'
 
@@ -10,7 +12,11 @@ const port = process.env.PORT
 const reactPort = process.env.REACT_PORT
 const url = process.env.URL
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename)
+
 const app = express()
+app.use(express.static(join(__dirname, 'public')));
 app.use(cors())
 
 app.use(express.static('build', {
@@ -22,6 +28,10 @@ app.use(express.static('build', {
       }
     }
 }));
+
+app.get('*', (req, res) => {
+    res.sendFile(join(__dirname, 'build', 'index.html'));
+});
 
 const server = createServer(app)
 const io = new Server(server, {
