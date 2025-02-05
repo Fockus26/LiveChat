@@ -1,7 +1,6 @@
 {
     "version": 2,
     "env": {
-      "PORT": "3001",
       "REACT_URL": "https://live-chat-front-smoky.vercel.app"
     },
     "builds": [
