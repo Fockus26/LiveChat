@@ -8,7 +8,7 @@ import { createServer } from 'node:http'
 
 dotenv.config()
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 const reactUrl = process.env.REACT_URL || 'https://live-chat-front-smoky.vercel.app'
 
 const __filename = fileURLToPath(import.meta.url);
