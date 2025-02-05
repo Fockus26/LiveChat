@@ -1,18 +1,15 @@
 {
     "version": 2,
-    "env": {
-      "REACT_URL": "https://live-chat-front-smoky.vercel.app"
-    },
     "builds": [
       {
-        "src": "app.js",
+        "src": "server/app.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/build/$1"
+        "dest": "/client/build/$1"
       }
     ]
   }
