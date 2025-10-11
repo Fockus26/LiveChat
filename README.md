@@ -27,6 +27,19 @@ Users can create or join chat rooms by providing a room ID and then instantly ex
 
 ---
 
+## 📸 Showcase
+
+### 🏠 Homepage
+
+![Home](./assets/gifs/Login.gif)
+
+### 📱 Chat
+
+![Chat 1](./assets/gifs/Chat%201.gif)
+![Chat 2](./assets/gifs/Chat%202.gif)
+
+---
+
 ## 🛠 Tech Stack
 
 - **Backend:** Node.js, Express, Socket.IO
@@ -36,6 +49,7 @@ Users can create or join chat rooms by providing a room ID and then instantly ex
 ---
 
 ## 📂 Project Structure
+
 ```text
 LiveChat/
 │
@@ -56,28 +70,24 @@ LiveChat/
 │       │   ├── Login.css
 │       │   └── index.css
 │       └── assets/
-│           └── chaticon.png
+│           └── logo.webp
 │
 └── README.md
 ```
 
 ---
 
-## 📸 Showcase
-
-_(Screenshots, GIFs or demo videos will be added here)_
-
----
-
 ## ⚙️ Installation & Setup
 
 ### Clone repo
+
 ```bash
 git clone https://github.com/Fockus26/LiveChat.git
 cd LiveChat
 ```
 
 ### Backend
+
 ```bash
 cd server
 npm install
@@ -85,6 +95,7 @@ npm start
 ```
 
 ### Frontend
+
 ```bash
 cd client
 npm install
@@ -92,7 +103,9 @@ npm start
 ```
 
 ### Environment Variables
+
 Create a `.env` file inside `/server` with:
+
 ```env
 PORT=3000
 REACT_URL=http://localhost:3001

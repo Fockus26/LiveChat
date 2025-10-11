@@ -1,3 +1,10 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for LiveChat
+# Allow all crawlers to access all content
+
 User-agent: *
 Disallow:
+
+# Sitemap (si la generas luego)
+Sitemap: https://live-chat-back.vercel.app/sitemap.xml
+
+# End of file

@@ -1,50 +1,51 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-import { fileURLToPath } from 'node:url';
-import { join, dirname } from 'node:path';
-import { Server } from 'socket.io'
-import { createServer } from 'node:http'
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import { Server } from "socket.io";
+import { createServer } from "node:http";
 
-dotenv.config()
+dotenv.config();
 
-const port = process.env.PORT || 3000
-const reactUrl = process.env.REACT_URL || 'https://live-chat-front-smoky.vercel.app'
+const port = process.env.PORT || 8000;
+const reactUrl = process.env.REACT_URL || "http://localhost:5173";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename)
+const app = express();
 
-const app = express()
-app.use(express.static(join(__dirname, 'client', 'build')));
-app.use(cors())
+app.use(
+  cors({
+    origin: reactUrl,
+    methods: ["GET", "POST"],
+  })
+);
 
-app.get('*', (req, res) => {
-    res.sendFile(join(__dirname, 'client', 'build', 'index.html'));
+app.use(express.json());
+
+app.get("/api", (req, res) => {
+  res.json({ message: "Server working ✅" });
 });
 
-const server = createServer(app)
+const server = createServer(app);
 const io = new Server(server, {
-    connectionStateRecovery: {},
-    cors: {
-        origin: reactUrl,
-        methods: ['GET', 'POST']
-    }
-})
+  connectionStateRecovery: {},
+  cors: {
+    origin: reactUrl,
+    methods: ["GET", "POST"],
+  },
+});
 
-io.on('connection', (socket) => {
-    socket.on('disconnect', () => {
-        console.log('Usuario desconectado', socket.id)
-    })
+io.on("connection", (socket) => {
+  socket.on("disconnect", () => {});
 
-    socket.on('join_room', (dataUser) => {
-        socket.join(dataUser.room)
-    })
+  socket.on("join_room", (dataUser) => {
+    socket.join(dataUser.room);
+  });
 
-    socket.on('send_message', (dataMessage) => {
-        socket.to(dataMessage.room).emit('receive_message', dataMessage)
-    })
-})
+  socket.on("send_message", (dataMessage) => {
+    socket.to(dataMessage.room).emit("receive_message", dataMessage);
+  });
+});
 
-server.listen(process.env.PORT, () => {
-   console.log(`Server running`)
-})
+server.listen(port, () => {
+  console.log(`✅ Server running on http://localhost:${port}`);
+  console.log(`🔗 CORS allowed from ${reactUrl}`);
+});
