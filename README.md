@@ -107,12 +107,20 @@ npm start
 Create a `.env` file inside `/server` with:
 
 ```env
-PORT=3000
-REACT_URL=http://localhost:3001
+PORT=8000
+REACT_URL=http://localhost:3000
 ```
 
 - **PORT** → Port where the backend runs
 - **REACT_URL** → URL where the frontend is running or deployed
+
+Create a `.env` file inside `/client` with:
+
+```env
+VITE_SERVER_URL=http://localhost:8000
+```
+
+- **VITE_SERVER_URL** → URL where the server is running or deployed
 
 ---
 
